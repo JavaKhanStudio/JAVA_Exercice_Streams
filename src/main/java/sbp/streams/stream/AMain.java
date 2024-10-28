@@ -158,7 +158,7 @@ public class AMain {
         fullMessage += "- " + generateMessage("salaireMoyens",
                 salaireMoyens,
                 salaireMoyens.size() == 3 && salaireMoyens.get(SexeEnum.INCONNU) == 7000 && salaireMoyens.get(SexeEnum.MALE) > 42665 && salaireMoyens.get(SexeEnum.FEMELLE) == 61500,
-                animaux.isEmpty());
+                salaireMoyens.isEmpty());
 
         JOptionPane.showMessageDialog(null, fullMessage);
     }
