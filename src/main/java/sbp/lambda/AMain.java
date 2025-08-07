@@ -1,4 +1,4 @@
-package sbp.streams.lambda;
+package sbp.lambda;
 
 public class AMain {
 

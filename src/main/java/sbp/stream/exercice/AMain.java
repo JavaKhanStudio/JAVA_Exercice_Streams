@@ -1,18 +1,17 @@
-package sbp.streams.stream;
+package sbp.stream.exercice;
 
 
-import sbp.streams.stream.enums.SexeEnum;
-import sbp.streams.stream.model.Animal;
-import sbp.streams.stream.model.Personne;
+import sbp.stream.exercice.enums.SexeEnum;
+import sbp.stream.exercice.model.Animal;
+import sbp.stream.exercice.model.Personne;
 
 import javax.swing.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 
-import static sbp.streams.stream.BanqueDeDonnees.people;
-import static sbp.streams.stream.enums.AnimalTypeEnum.CHAT;
-import static sbp.streams.stream.enums.AnimalTypeEnum.CHIEN;
+import static sbp.stream.exercice.BanqueDeDonnees.people;
+import static sbp.stream.exercice.enums.AnimalTypeEnum.CHAT;
+import static sbp.stream.exercice.enums.AnimalTypeEnum.CHIEN;
 
 public class AMain {
 

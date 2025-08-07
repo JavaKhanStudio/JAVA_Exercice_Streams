@@ -1,8 +1,8 @@
-package sbp.streams.stream.model;
+package sbp.stream.exercice.model;
 
 
 import lombok.*;
-import sbp.streams.stream.enums.SexeEnum;
+import sbp.stream.exercice.enums.SexeEnum;
 
 import java.util.List;
 
