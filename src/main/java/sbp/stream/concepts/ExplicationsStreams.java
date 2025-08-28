@@ -27,30 +27,15 @@ public class ExplicationsStreams {
     }
 
     public static void main(String[] args) {
-        ExplicationsStreams demo = new ExplicationsStreams();
-
+        System.out.println("--- Explications Streams ---");
         lesFilter();
-        System.out.println();
-
-        lesMap();
-        System.out.println();
-
-        lesRecherches();
-        System.out.println();
-
-        lesTris();
-        System.out.println();
-
-        lesReductions();
-        System.out.println();
-
-        lesCollectes();
-        System.out.println();
-
-        chainageComplexe();
-        System.out.println();
-
-        creationStreams();
+        // lesMap();
+        // lesRecherches();
+        // lesTris();
+        // lesReductions();
+        // lesCollectes();
+        // chainageComplexe();
+        // creationStreams();
     }
 
 
@@ -65,7 +50,7 @@ public class ExplicationsStreams {
         System.out.println("-- Les Filter --");
 
         // Filtrer les adultes (>= 18 ans)
-        System.out.println("Adultes :");
+        System.out.println("- Adultes -");
         personnes.stream()
                 .filter(p -> p.age >= 18)
                 .forEach(System.out::println);
