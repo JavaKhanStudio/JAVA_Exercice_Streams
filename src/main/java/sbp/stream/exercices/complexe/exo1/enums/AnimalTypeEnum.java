@@ -1,4 +1,4 @@
-package sbp.stream.exercice.enums;
+package sbp.stream.exercices.complexe.exo1.enums;
 
 public enum AnimalTypeEnum {
     

@@ -1,6 +1,6 @@
 package sbp.lambda;
 
-import sbp.stream.exercice.enums.SexeEnum;
+import sbp.stream.exercices.complexe.exo1.enums.SexeEnum;
 
 public class Personne {
     private String nom;

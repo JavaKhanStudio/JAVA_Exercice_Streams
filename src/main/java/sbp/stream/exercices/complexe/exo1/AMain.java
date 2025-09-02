@@ -1,26 +1,26 @@
-package sbp.stream.exercice;
+package sbp.stream.exercices.complexe.exo1;
 
 
-import sbp.stream.exercice.enums.SexeEnum;
-import sbp.stream.exercice.model.Animal;
-import sbp.stream.exercice.model.Personne;
+import sbp.stream.exercices.complexe.exo1.enums.SexeEnum;
+import sbp.stream.exercices.complexe.exo1.model.Animal;
+import sbp.stream.exercices.complexe.exo1.model.Personne;
 
 import javax.swing.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static sbp.stream.exercice.BanqueDeDonnees.people;
-import static sbp.stream.exercice.enums.AnimalTypeEnum.CHAT;
-import static sbp.stream.exercice.enums.AnimalTypeEnum.CHIEN;
+import static sbp.stream.exercices.complexe.exo1.BanqueDeDonnees.people;
+import static sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum.CHAT;
+import static sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum.CHIEN;
 
 public class AMain {
 
     // Bienvenue dans ce puzzle
     // Chaque element de ce dernier peut être résolu en un seul stream
-    // faite set la variable a l'aide de ce stream pour voir si votre réponse est juste
+    // Il faut set la variable à l'aide de ce stream pour voir si votre réponse est juste
     public static void codePourPuzzle() {
 
-        // Exemple Trouver le nombre de personne majeur dans la liste
+        // Exemple Trouver le nombre de personnes majeur dans la liste
         long nombrePerssoneMajeur = -1 ;
         // nombrePerssoneMajeur = people.stream()
 
@@ -29,13 +29,13 @@ public class AMain {
         List<Personne> listeHomme = Collections.emptyList();
         //listeHomme = people.stream()
 
-        // Trouver le nombre d'inconnu mineur
+        // Trouver le nombre d'inconnus mineur
         long nombreInconnuMineur = -1 ;
         //nombreInconnuMineur = people.stream()
 
 
 
-        // Trouver La somme total de l'argent gagnier par les femmes majeurs
+        // Trouver La somme totale de l'argent gagné par les femmes majeures
         long argentFemmeMajeur = -1 ;
         // argentFemmeMajeur = people.stream()
 
@@ -44,8 +44,8 @@ public class AMain {
         //vieux = people.stream()
 
 
-        // En gardant uniquement les personnes majeurs,
-        // D'un sexe defini (pas d'inconnu)
+        // En gardant uniquement les personnes majeures,
+        // D'un sexe définit (pas d'inconnu)
         // diviser la liste par un map diviser par genre
         Map<SexeEnum, List<Personne>> persons = new HashMap<>() ;
         // persons = people.stream()
@@ -62,8 +62,8 @@ public class AMain {
 
 
         // Trouver le total des lengths de tous les noms de tous les animaux
-        // Appartement à des femmes majeur
-        // Pour les animaux autre que des chats ou des chiens
+        // Appartement à des femmes majeures
+        // Pour les animaux autres que des chats ou des chiens
         long animalNameLength = -1 ;
         // animalNameLength = people.stream()
 
@@ -86,7 +86,7 @@ public class AMain {
 
         // Difficile
         // Obtenir, en un seul stream
-        // Une map des salaires moyen par sexe
+        // Une map des salaires moyens par sexe
         // Des gens ayant un chat de type FEMELLE
         // en ignorant les duplications
         // Autant des animaux de compagnie que des personnes
@@ -95,16 +95,13 @@ public class AMain {
 
 
         moulinetteDeVerification(nombrePerssoneMajeur, listeHomme, nombreInconnuMineur, argentFemmeMajeur, vieux, animaux, animalNameLength,
-                persons.size(),salaireHommeOrdreCroissant, salaireMoyens) ;
+                persons.size(),salaireHommeOrdreCroissant) ;
 
 
     }
 
     public static void moulinetteDeVerification(long nombrePerssoneMajeur,List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur,Personne vieux,List<Animal> animaux,long animalNameLength,
-                                                long persons,int[] salaireHommeOrdreCroissant,Map<SexeEnum, Double> salaireMoyens) {
-
-        System.out.println(salaireMoyens);
-
+                                                long persons,int[] salaireHommeOrdreCroissant) {
 
         String fullMessage = "";
 
@@ -152,12 +149,6 @@ public class AMain {
                 salaireHommeOrdreCroissant.length == 15 && salaireHommeOrdreCroissant[0] == 0 && salaireHommeOrdreCroissant[14] == 72000,
                 salaireHommeOrdreCroissant.length == 0);
 
-
-
-        fullMessage += "- " + generateMessage("salaireMoyens",
-                salaireMoyens,
-                salaireMoyens.size() == 3 && salaireMoyens.get(SexeEnum.INCONNU) == 7000 && salaireMoyens.get(SexeEnum.MALE) > 42665 && salaireMoyens.get(SexeEnum.FEMELLE) == 61500,
-                salaireMoyens.isEmpty());
 
         JOptionPane.showMessageDialog(null, fullMessage);
     }

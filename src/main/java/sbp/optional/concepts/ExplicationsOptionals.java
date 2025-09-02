@@ -36,6 +36,7 @@ public class ExplicationsOptionals {
         // Dans notre cas optimal
         opt1.ifPresent(System.out::println);
 
+        // Cas en erreur
         try {opt2.get();} catch (Exception e) {System.out.println("Petit probleme " + e.getClass());}
 
     }

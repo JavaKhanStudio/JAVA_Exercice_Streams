@@ -1,4 +1,4 @@
-package sbp.stream.exercice.enums;
+package sbp.stream.exercices.complexe.exo2.enums;
 
 public enum SexeEnum {
 
