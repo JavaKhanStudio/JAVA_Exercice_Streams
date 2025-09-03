@@ -29,11 +29,6 @@ public class ExplicationLambda {
         };
 
         r.accept("clé1", "valeur1");
-
-        
-
-
-
     }
 
     public static void exempleListe() {
