@@ -1,4 +1,4 @@
-package sbp.correction;
+package sbp.kata;
 
 import java.util.stream.IntStream;
 
