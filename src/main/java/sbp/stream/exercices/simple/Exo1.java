@@ -1,6 +1,9 @@
 package sbp.stream.exercices.simple;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Exo1 {
 
@@ -21,38 +24,64 @@ public class Exo1 {
 
         // Q1 - Affiche le nombres de chiffre pairs de la liste testingList.
         long valueQ1 =
-                testingList.stream()
-                .filter(n -> n % 2 == 0)
-                .count();
+                testingList
+                        .stream()
+                        .filter(n -> n % 2 == 0)
+                        .count();
 
         // Expected :
 
         // Q2 - Afficher le nombre de chiffre different dans la liste testingList
         long valueQ2 =
-                testingList.stream()
+                testingList
+                        .stream()
                         .distinct()
                         .count();
 
         // Expected :
 
-        // Q3 - Afficher le nombre de chiffre different dans la liste testingList
+        // Q3 - Afficher le nombre de chiffre paire different dans la liste testingList
         long valueQ3 =
-                testingList.stream()
+                testingList
+                        .stream()
                         .distinct()
                         .filter(n -> n % 2 == 0)
                         .count();
 
         // Expected :
 
+        // Q4 - Transformer la liste pour écrire paire ou Impaire à la place des nombres
+        List<String> valueQ4 =
+                testingList
+                        .stream()
+                        .map(valeur -> valeur % 2 == 0 ? "Paire" : "Impaire")
+                        .toList();
+
+
+
         // Q4 - Compter le nombre de nombres dans la double liste de nombre (testingListImbr)
-        long valueQ4 =
-                testingListImbr.stream()
+        long valueQ5 =
+                testingListImbr
+                        .stream()
                         .flatMap(List::stream)
                         .count();
 
         // Expected :
 
-        // Q5 -
+        // Q5 - Calculer la somme des nombres unique dans la double liste de nombre (testingListImbr)
+        long valueQ6 =
+                testingListImbr
+                        .stream()
+                        .flatMap(List::stream)
+                        .distinct()
+                        .count();
+
+
+        Predicate<String> isEmpty = s -> s.isEmpty();
+
+        System.out.println(isEmpty.test(""));      // true
+        System.out.println(isEmpty.test("hello")); // false
+
     }
 
 }
