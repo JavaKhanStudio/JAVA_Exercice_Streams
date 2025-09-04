@@ -3,7 +3,7 @@ package sbp.optional.concepts;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-public class ExplicationsOptionals {
+public class Expli {
 
     static Optional<String> opt1 ;
     static Optional<String> opt2 ;

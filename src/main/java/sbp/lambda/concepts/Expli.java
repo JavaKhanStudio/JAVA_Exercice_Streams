@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public class ExplicationLambda {
+public class Expli {
 
 
     public static void main(String[] args) {
