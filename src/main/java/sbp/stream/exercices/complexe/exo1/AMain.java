@@ -8,6 +8,7 @@ import sbp.stream.exercices.complexe.exo1.model.Personne;
 import javax.swing.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import static sbp.stream.exercices.complexe.exo1.BanqueDeDonnees.people;
 import static sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum.CHAT;
@@ -32,7 +33,6 @@ public class AMain {
         // Trouver le nombre d'inconnus mineur
         long nombreInconnuMineur = -1 ;
         //nombreInconnuMineur = people.stream()
-
 
 
         // Trouver La somme totale de l'argent gagné par les femmes majeures
@@ -84,14 +84,6 @@ public class AMain {
 
 
 
-        // Difficile
-        // Obtenir, en un seul stream
-        // Une map des salaires moyens par sexe
-        // Des gens ayant un chat de type FEMELLE
-        // en ignorant les duplications
-        // Autant des animaux de compagnie que des personnes
-        Map<SexeEnum, Double> salaireMoyens = new HashMap<SexeEnum, Double>(); ;
-        // salaireMoyens = people.stream()
 
 
         moulinetteDeVerification(nombrePerssoneMajeur, listeHomme, nombreInconnuMineur, argentFemmeMajeur, vieux, animaux, animalNameLength,
@@ -99,6 +91,29 @@ public class AMain {
 
 
     }
+
+    private static double appliquerImpots(int salaire) {
+        int net = 0;
+
+        // Première tranche : jusqu’à 30k à 90%
+        int tranche1 = Math.min(salaire, 30_000);
+        net += tranche1 * 90 / 100;
+
+        // Deuxième tranche : jusqu’à 60k à 80%
+        if (salaire > 30_000) {
+            int tranche2 = Math.min(salaire - 30_000, 30_000);
+            net += tranche2 * 80 / 100;
+        }
+
+        // Troisième tranche : le reste à 70%
+        if (salaire > 60_000) {
+            int tranche3 = salaire - 60_000;
+            net += tranche3 * 70 / 100;
+        }
+
+        return net;
+    }
+
 
     public static void moulinetteDeVerification(long nombrePerssoneMajeur,List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur,Personne vieux,List<Animal> animaux,long animalNameLength,
                                                 long persons,int[] salaireHommeOrdreCroissant) {
