@@ -14,8 +14,6 @@ public class BanqueDeDonnees {
     public BanqueDeDonnees() {
         theList = new ArrayList<>();
 
-
-
         theList.addAll(ClimateData2022_BFC.getData());
         theList.addAll(ClimateData2023_BFC.getData());
         theList.addAll(ClimateData2024_BFC.getData());
