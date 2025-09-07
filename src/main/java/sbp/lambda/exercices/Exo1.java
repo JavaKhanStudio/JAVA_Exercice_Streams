@@ -17,7 +17,7 @@ public class Exo1 {
             }
 
             System.out.println("=== EXERCICE 1 ===");
-            // Remplacez la référence de méthode par une expression lambda
+            // Remplacez la référence de méthode par une EXPRESSION lambda
             for(int i = 0; i < fruits.size(); i++) {
                 afficherFruit(fruits.get(i));
             }

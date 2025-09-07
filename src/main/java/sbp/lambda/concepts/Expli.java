@@ -3,6 +3,7 @@ package sbp.lambda.concepts;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 public class Expli {
 
@@ -20,6 +21,8 @@ public class Expli {
     public static void exempleSimple() {
         Runnable r = () -> System.out.println("Hello !");
         r.run();
+
+        Function<Integer,Integer> r2 = (Integer x) -> { return x * 2; };
     }
 
     public static void exempleComplexe() {
