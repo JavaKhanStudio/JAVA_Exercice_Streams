@@ -1,4 +1,7 @@
 package sbp.optional.exercice;
 
-public class AMain {
+public class Exo {
+
+
+
 }
