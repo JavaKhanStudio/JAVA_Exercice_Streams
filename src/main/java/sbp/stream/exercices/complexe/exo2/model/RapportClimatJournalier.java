@@ -26,5 +26,6 @@ public class RapportClimatJournalier {
         this.date = date;
         this.temperature = temperature;
         this.pluieEnMl = pluieEnMl;
+        this.ventKmH = ventKmH;
     }
 }
