@@ -13,7 +13,7 @@ public class AMain {
         List<RapportClimatJournalier> theList = banque.theList ;
 
 
-        theList.stream()
+        theList.stream() ;
 
     }
 

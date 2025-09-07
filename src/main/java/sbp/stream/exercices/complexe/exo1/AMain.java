@@ -83,13 +83,44 @@ public class AMain {
         }
 
 
+        // Combiner le noms de tous les animaux unique en un seul string
+        // En séparant chaque nom d'une ","
+        String megaNom = people
+                .stream()
+                .flatMap(personne -> personne.getAnimaux().stream())
+                .distinct()
+                .map(Animal::getNom)
+                .collect(Collectors.joining(",")) ;
 
+
+        // Combiner le salaire de tous les hommes
+        // en enlevant leurs impôts (De facon directe, aka, non réaliste)
+        // Salaire < 30000 = 10%
+        // Salaire < 60000 = 20 %
+        // Salaire >= 60000 = 30 %
+        double totalSalairesApresTaxes = people
+                .stream()
+                .filter(personne -> personne.getSexe() == SexeEnum.MALE)
+                .mapToDouble(Personne::getSalaire)
+                .map(s -> {
+                    if (s < 30_000)    return s * 90 / 100;
+                    if (s < 60_000)    return s * 80 / 100;
+                    return s * 70 / 100;
+                })
+                .sum() ;
+
+
+        // Difficile -> Faite la même chose, mais de facon réaliste
+        double totalSalairesApresTaxesPropre = people
+                .stream()
+                .filter(personne -> personne.getSexe() == SexeEnum.MALE)
+                .mapToDouble(personne -> appliquerImpots(personne.getSalaire()))
+                .sum() ;
 
 
         moulinetteDeVerification(nombrePerssoneMajeur, listeHomme, nombreInconnuMineur, argentFemmeMajeur, vieux, animaux, animalNameLength,
-                persons.size(),salaireHommeOrdreCroissant) ;
-
-
+                persons.size(),salaireHommeOrdreCroissant, megaNom, totalSalairesApresTaxes, totalSalairesApresTaxesPropre) ;
+        
     }
 
     private static double appliquerImpots(int salaire) {
@@ -116,7 +147,7 @@ public class AMain {
 
 
     public static void moulinetteDeVerification(long nombrePerssoneMajeur,List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur,Personne vieux,List<Animal> animaux,long animalNameLength,
-                                                long persons,int[] salaireHommeOrdreCroissant) {
+                                                long persons,int[] salaireHommeOrdreCroissant, String megaNom, double totalSalairesApresTaxes,double totalSalairesApresTaxesPropre) {
 
         String fullMessage = "";
 
@@ -164,6 +195,20 @@ public class AMain {
                 salaireHommeOrdreCroissant.length == 15 && salaireHommeOrdreCroissant[0] == 0 && salaireHommeOrdreCroissant[14] == 72000,
                 salaireHommeOrdreCroissant.length == 0);
 
+        fullMessage += "- " + generateMessage("megaNom",
+                megaNom,
+                "Milo,Bella,Leo,Luna,Charlie,Chloe,Max,Sophie,Oscar,Daisy,Rex,Bailey,Buddy,Coco,Rocky,Molly,Duke,Syn,Buster,Sadie,Silly,Mindy,Shelly,Tank,Turbo,Speedy,Yoda,Ninja,Shere Khan,Tigra,Tiger,Snowball,Whiskers,Rusty,Simba,Patches".equals(megaNom),
+                "".equals(megaNom)) ;
+
+        fullMessage += "- " + generateMessage("totalSalairesApresTaxes",
+                totalSalairesApresTaxes,
+                totalSalairesApresTaxes == 684500.0,
+                totalSalairesApresTaxes == 0) ;
+
+        fullMessage += "- " + generateMessage("totalSalairesApresTaxes",
+                totalSalairesApresTaxesPropre,
+                totalSalairesApresTaxesPropre == 777500.0,
+                totalSalairesApresTaxesPropre == 0) ;
 
         JOptionPane.showMessageDialog(null, fullMessage);
     }
