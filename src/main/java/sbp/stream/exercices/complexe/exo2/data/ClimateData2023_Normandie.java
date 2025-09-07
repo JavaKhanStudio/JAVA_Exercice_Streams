@@ -213,7 +213,7 @@ public class ClimateData2023_Normandie {
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 21)).temperature(30).pluieEnMl(1).ventKmH(26).build(),
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 22)).temperature(23).pluieEnMl(5).ventKmH(4).build(),
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 23)).temperature(20).pluieEnMl(11).ventKmH(23).build(),
-            RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 24)).temperature(21).pluieEnMl(10).ventKmH(7).build(),
+            RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 24)).temperature(50).pluieEnMl(10).ventKmH(7).build(),
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 25)).temperature(20).pluieEnMl(1).ventKmH(12).build(),
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 26)).temperature(23).pluieEnMl(10).ventKmH(8).build(),
             RapportClimatJournalier.builder().region(RegionEnum.NORMANDIE).date(new Date(123, 6, 27)).temperature(28).pluieEnMl(15).ventKmH(1).build(),

@@ -5,7 +5,7 @@ import lombok.Builder;
 public class TestZone {
 
     @Builder
-    private class Personne {
+    private static class Personne {
 
         private String nom;
         private int age;

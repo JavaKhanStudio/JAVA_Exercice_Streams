@@ -24,7 +24,7 @@ public class ClimateData2022_Corse {
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 11)).temperature(8).pluieEnMl(15).ventKmH(61).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 12)).temperature(15).pluieEnMl(12).ventKmH(40).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 13)).temperature(6).pluieEnMl(14).ventKmH(37).build(),
-            RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 14)).temperature(4).pluieEnMl(16).ventKmH(70).build(),
+            RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 14)).temperature(-2).pluieEnMl(16).ventKmH(70).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 15)).temperature(10).pluieEnMl(3).ventKmH(52).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 16)).temperature(14).pluieEnMl(16).ventKmH(0).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CORSE).date(new Date(122, 0, 17)).temperature(4).pluieEnMl(8).ventKmH(42).build(),
