@@ -51,8 +51,11 @@ public class Exo1 {
         // long valueQ6 =
 
         // Expected : 8
-        
 
+        // Q7 Trouver le nombre de nombres unique pair et plus petit que 15 dans la double liste de nombre (testingListImbr)
+        // long valueQ7 =
+
+        // Expected : 4
     }
 
 }
