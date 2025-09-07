@@ -1,10 +1,10 @@
-package sbp.stream.exercice.model;
+package sbp.stream.exercices.complexe.exo1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import sbp.stream.exercice.enums.AnimalTypeEnum;
-import sbp.stream.exercice.enums.SexeEnum;
+import sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum;
+import sbp.stream.exercices.complexe.exo1.enums.SexeEnum;
 
 @Data
 @AllArgsConstructor

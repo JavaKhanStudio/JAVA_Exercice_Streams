@@ -1,9 +1,9 @@
-package sbp.stream.exercice;
+package sbp.stream.exercices.complexe.exo1;
 
-import sbp.stream.exercice.enums.AnimalTypeEnum;
-import sbp.stream.exercice.enums.SexeEnum;
-import sbp.stream.exercice.model.Animal;
-import sbp.stream.exercice.model.Personne;
+import sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum;
+import sbp.stream.exercices.complexe.exo1.enums.SexeEnum;
+import sbp.stream.exercices.complexe.exo1.model.Animal;
+import sbp.stream.exercices.complexe.exo1.model.Personne;
 
 import java.util.Arrays;
 import java.util.List;

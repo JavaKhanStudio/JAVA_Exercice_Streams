@@ -3,12 +3,13 @@ package sbp.optional.concepts;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-public class ExplicationsOptionals {
+public class Expli {
 
     static Optional<String> opt1 ;
     static Optional<String> opt2 ;
 
     public static void main(String[] args) {
+        System.out.println("--- Explications Streams ---");
         initValues() ;
         //lesGet() ;
         //orElse() ;
@@ -35,6 +36,7 @@ public class ExplicationsOptionals {
         // Dans notre cas optimal
         opt1.ifPresent(System.out::println);
 
+        // Cas en erreur
         try {opt2.get();} catch (Exception e) {System.out.println("Petit probleme " + e.getClass());}
 
     }
