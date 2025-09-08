@@ -23,6 +23,7 @@ public class Expli {
         r.run();
 
         Function<Integer,Integer> r2 = (Integer x) -> { return x * 2; };
+        int x = r2.apply(4) ;
     }
 
     public static void exempleComplexe() {

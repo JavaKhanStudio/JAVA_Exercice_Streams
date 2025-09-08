@@ -106,28 +106,6 @@ public class AMain {
 
     }
 
-    private static double appliquerImpots(int salaire) {
-        int net = 0;
-
-        // Première tranche : jusqu’à 30k à 90%
-        int tranche1 = Math.min(salaire, 30_000);
-        net += tranche1 * 90 / 100;
-
-        // Deuxième tranche : jusqu’à 60k à 80%
-        if (salaire > 30_000) {
-            int tranche2 = Math.min(salaire - 30_000, 30_000);
-            net += tranche2 * 80 / 100;
-        }
-
-        // Troisième tranche : le reste à 70%
-        if (salaire > 60_000) {
-            int tranche3 = salaire - 60_000;
-            net += tranche3 * 70 / 100;
-        }
-
-        return net;
-    }
-
 
     public static void moulinetteDeVerification(long nombrePerssoneMajeur,List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur,Personne vieux,List<Animal> animaux,long animalNameLength,
                                                 long persons,int[] salaireHommeOrdreCroissant, String megaNom, double totalSalairesApresTaxes,double totalSalairesApresTaxesPropre) {
