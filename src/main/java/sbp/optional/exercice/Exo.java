@@ -10,7 +10,7 @@ public class Exo {
         Utilisateur u2 = new Utilisateur("Bob", null);
         Utilisateur u3 = new Utilisateur(null, "Carlos@Mail.com");
 
-        List<Utilisateur> utilisateurs = List.of(u1, u2, u3) ;
+        List<Utilisateur> utilisateurs = List.of(u1, u2, u3);
 
         // Changer les getters pour nom et email par des optionals
         System.out.println("Email de u1 : " + u1.getEmail());
@@ -21,21 +21,21 @@ public class Exo {
         utilisateurs.forEach(utilisateur -> System.out.println(utilisateur.getNom().orElse("John Doe")));
 
         // Retourner le nom de chaque utilisateur si ce dernier ne commence pas par B, si aucune valeur, retourner un nom vide
-        utilisateurs.forEach(utilisateur ->  System.out.println("Nom sans B " + utilisateur.getNom().filter(nom -> !nom.startsWith("B")).orElse("")));
+        utilisateurs.forEach(utilisateur -> System.out.println("Nom sans B " + utilisateur.getNom().filter(nom -> !nom.startsWith("B")).orElse("")));
 
         // Retourner le email de chaque utilisateur en lower case, sinon retourner un vide
         utilisateurs.forEach(utilisateur -> System.out.println(utilisateur.getEmail().map(String::toLowerCase).orElse("")));
 
         // Si quelqu'un n'à pas de nom, lancer une exception
-        try{
+        try {
             utilisateurs.forEach(utilisateur -> System.out.println(utilisateur.getNom().orElseThrow()));
         } catch (Exception e) {
             System.out.println("Pas de nom trouvé");
         }
 
         // Difficile : Si quelqu'un s'appelle Alice, ou n'a pas de nom, lancer une exception.
-        try{
-            utilisateurs.forEach(utilisateur -> System.out.println(utilisateur.getNom().filter(nom -> nom.equals("Alice")).orElseThrow()));
+        try {
+            utilisateurs.forEach(utilisateur -> System.out.println(utilisateur.getNom().filter(nom -> !nom.equals("Alice")).orElseThrow()));
         } catch (Exception e) {
             System.out.println("Aucune Alice ou possible Alice permise ! ");
         }
