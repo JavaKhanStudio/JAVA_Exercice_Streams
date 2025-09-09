@@ -61,7 +61,7 @@ public class Exo2 {
         // System.out.println(q4);
         // Expected : 40
 
-        // Q5 - Afficher la somme des élément de la testingDoubleList mise au carré
+        // Q5 - Afficher la somme des éléments de la testingDoubleList une fois ces derniers mise au carré
         // double q5 = testingDoubleList
 
         // System.out.println(q5);
@@ -69,7 +69,7 @@ public class Exo2 {
 
 
         // Q6 - Afficher tous les stats, base sur les nombres unique de la testingList,
-        // mise au carré,
+        // une fois ces derniers mise au carré,
         // en excluant tous les éléments plus grand que 50 une fois cette mise au carré effectué
         // IntSummaryStatistics q6 = testingList
 
