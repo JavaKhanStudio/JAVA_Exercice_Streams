@@ -1,10 +1,8 @@
 package sbp.stream.exercices.complexe.exo2;
 
-import sbp.stream.exercices.complexe.exo2.enums.RegionEnum;
 import sbp.stream.exercices.complexe.exo2.model.RapportClimatJournalier;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 public class AMain {
 
@@ -12,7 +10,7 @@ public class AMain {
         System.out.println("-- Debut des test des exercices sur les streams --");
         BanqueDeDonnees banque = new BanqueDeDonnees();
 
-        List<RapportClimatJournalier> theList = banque.theList ;
+        List<RapportClimatJournalier> theList = banque.theList;
 
         // Trouver le nombre de jour ayant eu des vents au dessus de 44 KM/H
         // long nbJourVents = theList
@@ -22,7 +20,7 @@ public class AMain {
         // boolean jourTropChaud = theList
         // Expected : False
 
-        // Trouver la moyenne une température en dessous de 0 en bretagne
+        // Trouver le nombre de jour ou la température est en dessous de 0 en bretagne
         // long jourFroidBretagne = theList
         // Expected : 48
 
