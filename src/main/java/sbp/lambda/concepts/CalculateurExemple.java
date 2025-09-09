@@ -1,7 +1,5 @@
 package sbp.lambda.concepts;
 
-import sbp.TestZone;
-
 public class CalculateurExemple {
 
     @FunctionalInterface

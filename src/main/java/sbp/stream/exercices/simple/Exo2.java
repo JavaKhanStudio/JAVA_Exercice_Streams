@@ -8,16 +8,16 @@ public class Exo2 {
     public static List<Integer> testingList = List.of(
             1, 1, 2, 3, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 9, 9, 9,
             12, 14, 16, 17, 19, 20, 23, 29, 30, 42,
-            11, 33, 22, 22, 11, 22, 93, 12, 34, 40, 39);
+            11, 33, 22, 22, 11, 22, 93, 12, 34, 40, 39) ;
 
 
     public static List<List<Integer>> testingListImbr = List.of(
-            List.of(1, 1, 2),
-            List.of(4, 5, 6),
-            List.of(55, 5, 1),
-            List.of(0, 1, 6),
-            List.of(65, 65, 65)
-    );
+            List.of(1,1,2),
+            List.of(4,5,6),
+            List.of(55,5,1),
+            List.of(0,1,6),
+            List.of(65,65,65)
+    ) ;
 
     public static List<Double> testingDoubleList = List.of(
             4.2,
@@ -25,7 +25,7 @@ public class Exo2 {
             3., 6., 9.,
             5.3,
             9.9
-    );
+    ) ;
 
 
     public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class Exo2 {
         int q0 = testingList
                 .stream()
                 .mapToInt(Integer::intValue)
-                .sum();
+                .sum() ;
 
         System.out.println(q0);
         // Expected : 655
@@ -53,7 +53,7 @@ public class Exo2 {
                 .stream()
                 .mapToInt(Integer::intValue)
                 .filter(x -> x > 50)
-                .sum();
+                .sum() ;
 
         System.out.println(q2);
         // Expected : 93
@@ -62,8 +62,8 @@ public class Exo2 {
         double q3 = testingListImbr
                 .stream()
                 .flatMapToInt(stream -> stream.stream().mapToInt(Integer::intValue))
-                .filter(x -> x % 2 != 0)
-                .average().orElse(0);
+                .filter(x -> x%2 != 0)
+                .average().orElse(0) ;
 
         System.out.println(q3);
         // Expected : 26.4

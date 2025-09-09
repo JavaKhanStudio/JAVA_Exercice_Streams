@@ -196,7 +196,7 @@ public class ClimateData2024_CVDL {
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 3)).temperature(28).pluieEnMl(0).ventKmH(30).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 4)).temperature(25).pluieEnMl(7).ventKmH(38).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 5)).temperature(21).pluieEnMl(18).ventKmH(11).build(),
-            RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 6)).temperature(32).pluieEnMl(6).ventKmH(20).build(),
+            RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 6)).temperature(44).pluieEnMl(6).ventKmH(20).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 7)).temperature(32).pluieEnMl(6).ventKmH(26).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 8)).temperature(22).pluieEnMl(0).ventKmH(33).build(),
             RapportClimatJournalier.builder().region(RegionEnum.CENTRE_VAL_DE_LOIRE).date(new Date(124, 6, 9)).temperature(28).pluieEnMl(6).ventKmH(31).build(),
