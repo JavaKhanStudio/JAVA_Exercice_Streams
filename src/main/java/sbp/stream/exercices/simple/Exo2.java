@@ -95,12 +95,13 @@ public class Exo2 {
         IntSummaryStatistics q6 = testingList
                 .stream()
                 .mapToInt(Integer::intValue)
+                .distinct()
                 .map(x -> x * x)
                 .filter(y -> y < 50)
                 .summaryStatistics();
 
         System.out.println(q6);
-        // Expected : IntSummaryStatistics{count=11, sum=202, min=1, average=18,363636, max=49}
+        // Expected : IntSummaryStatistics{count=7, sum=140, min=1, average=20,000000, max=49}
     }
 
 }
