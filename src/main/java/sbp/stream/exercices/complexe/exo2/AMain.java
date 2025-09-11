@@ -34,7 +34,7 @@ public class AMain {
 
         // Trouver le jour le plus froid de la corse en 2022
         // RapportClimatJournalier jourFroid = theList
-        // Expected : RapportClimatJournalier(region=CORSE, date=Fri Jan 14 00:00:00 CET 2022, temperature=-2, pluieEnMl=16, ventKmH=0)
+        // Expected : RapportClimatJournalier(region=CORSE, date=Fri Jan 14 00:00:00 CET 2022, temperature=-2, pluieEnMl=16, ventKmH=70)
 
         // Trouver la somme en ML des pluies de tous les jours avec une température au-dessus de 20 degrees en grand est
         // int pluie = theList
