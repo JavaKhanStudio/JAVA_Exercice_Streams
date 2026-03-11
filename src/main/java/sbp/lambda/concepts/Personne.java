@@ -1,9 +1,6 @@
 package sbp.lambda.concepts;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -12,16 +9,17 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Personne implements Comparable<Personne> {
     private String nom;
     private int age;
     private int salaire;
 
-    // Compare par âge (Comparable par défaut)
-    @Override
-    public int compareTo(Personne autre) {
-        return Integer.compare(this.age, autre.age);
+    public Personne(String nom, int age) {
+        this.nom = nom;
+        this.age = age;
     }
 
     public static void main(String[] args) {
@@ -52,5 +50,11 @@ public class Personne implements Comparable<Personne> {
         personnes.sort(Comparator.comparing(Personne::getNom).reversed());
         System.out.println("\nTrier par Nom :");
         personnes.forEach(System.out::println);
+    }
+
+    // Compare par âge (Comparable par défaut)
+    @Override
+    public int compareTo(Personne autre) {
+        return Integer.compare(this.age, autre.age);
     }
 }
