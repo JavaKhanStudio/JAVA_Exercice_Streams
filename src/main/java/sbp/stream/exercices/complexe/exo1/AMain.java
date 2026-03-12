@@ -6,9 +6,11 @@ import sbp.stream.exercices.complexe.exo1.model.Animal;
 import sbp.stream.exercices.complexe.exo1.model.Personne;
 
 import javax.swing.*;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
 
 import static sbp.stream.exercices.complexe.exo1.BanqueDeDonnees.people;
 import static sbp.stream.exercices.complexe.exo1.enums.AnimalTypeEnum.CHAT;
@@ -22,37 +24,37 @@ public class AMain {
     public static void codePourPuzzle() {
 
         // Exemple Trouver le nombre de personnes majeur dans la liste
-        long nombrePerssoneMajeur = -1 ;
+        long nombrePerssoneMajeur = -1;
         // nombrePerssoneMajeur = people.stream()
 
 
-        // Retourner tous les d'homme
+        // Retourner une liste contenant tous les hommes
         List<Personne> listeHomme = Collections.emptyList();
         //listeHomme = people.stream()
 
         // Trouver le nombre d'inconnus mineur
-        long nombreInconnuMineur = -1 ;
+        long nombreInconnuMineur = -1;
         //nombreInconnuMineur = people.stream()
 
 
         // Trouver La somme totale de l'argent gagné par les femmes majeures
-        long argentFemmeMajeur = -1 ;
+        long argentFemmeMajeur = -1;
         // argentFemmeMajeur = people.stream()
 
         // Trouver la plus vieille personne dans la liste
-        Personne vieux = null ;
+        Personne vieux = null;
         //vieux = people.stream()
 
 
         // En gardant uniquement les personnes majeures,
         // D'un sexe définit (pas d'inconnu)
         // diviser la liste par un map diviser par genre
-        Map<SexeEnum, List<Personne>> persons = new HashMap<>() ;
+        Map<SexeEnum, List<Personne>> persons = new HashMap<>();
         // persons = people.stream()
 
         // Organiser, en ordre croissant, les hommes de moins de 40 ans par salaire.
         // Retourner uniquement les salaires
-        int[] salaireHommeOrdreCroissant = new int[0] ;
+        int[] salaireHommeOrdreCroissant = new int[0];
         // salaireHommeOrdreCroissant = people.stream()
 
 
@@ -64,17 +66,17 @@ public class AMain {
         // Trouver le total des lengths de tous les noms de tous les animaux
         // Appartement à des femmes majeures
         // Pour les animaux autres que des chats ou des chiens
-        long animalNameLength = -1 ;
+        long animalNameLength = -1;
         // animalNameLength = people.stream()
 
 
         // Parfois une liste c'est plus simple
         AtomicReference<Integer> total = new AtomicReference<>(0);
-        for(Personne person : people) {
-            if(person.getAge() >= 18 && person.getSexe() == SexeEnum.FEMELLE) {
+        for (Personne person : people) {
+            if (person.getAge() >= 18 && person.getSexe() == SexeEnum.FEMELLE) {
                 person.getAnimaux().forEach(
                         animal -> {
-                            if(animal.getAnimalType() != CHIEN && animal.getAnimalType() != CHAT) {
+                            if (animal.getAnimalType() != CHIEN && animal.getAnimalType() != CHAT) {
                                 total.updateAndGet(v -> v + animal.getNom().length());
                             }
                         }
@@ -83,10 +85,9 @@ public class AMain {
         }
 
 
-
         // Combiner le noms de tous les animaux unique en un seul string
         // En séparant chaque nom d'une ","
-        String megaNom = "" ;
+        String megaNom = "";
 
 
         // Combiner le salaire de tous les hommes
@@ -94,21 +95,21 @@ public class AMain {
         // Salaire < 30000 = 10%
         // Salaire < 60000 = 20 %
         // Salaire >= 60000 = 30 %
-        double totalSalairesApresTaxes = 0 ;
+        double totalSalairesApresTaxes = 0;
 
 
         // Difficile -> Faite la même chose, mais de facon réaliste
-        double totalSalairesApresTaxesPropre = 0 ;
+        double totalSalairesApresTaxesPropre = 0;
 
 
         moulinetteDeVerification(nombrePerssoneMajeur, listeHomme, nombreInconnuMineur, argentFemmeMajeur, vieux, animaux, animalNameLength,
-                persons.size(),salaireHommeOrdreCroissant, megaNom, totalSalairesApresTaxes, totalSalairesApresTaxesPropre) ;
+                persons.size(), salaireHommeOrdreCroissant, megaNom, totalSalairesApresTaxes, totalSalairesApresTaxesPropre);
 
     }
 
 
-    public static void moulinetteDeVerification(long nombrePerssoneMajeur,List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur,Personne vieux,List<Animal> animaux,long animalNameLength,
-                                                long persons,int[] salaireHommeOrdreCroissant, String megaNom, double totalSalairesApresTaxes,double totalSalairesApresTaxesPropre) {
+    public static void moulinetteDeVerification(long nombrePerssoneMajeur, List<Personne> listeHomme, long nombreInconnuMineur, long argentFemmeMajeur, Personne vieux, List<Animal> animaux, long animalNameLength,
+                                                long persons, int[] salaireHommeOrdreCroissant, String megaNom, double totalSalairesApresTaxes, double totalSalairesApresTaxesPropre) {
 
         String fullMessage = "";
 
@@ -133,7 +134,7 @@ public class AMain {
 
         fullMessage += "- " + generateMessage("vieux",
                 vieux != null,
-                vieux!= null && vieux.getNom().equals("George"),
+                vieux != null && vieux.getNom().equals("George"),
                 vieux == null);
 
         fullMessage += "- " + generateMessage("animaux",
@@ -159,27 +160,27 @@ public class AMain {
         fullMessage += "- " + generateMessage("megaNom",
                 megaNom,
                 "Milo,Bella,Leo,Luna,Charlie,Chloe,Max,Sophie,Oscar,Daisy,Rex,Bailey,Buddy,Coco,Rocky,Molly,Duke,Syn,Buster,Sadie,Silly,Mindy,Shelly,Tank,Turbo,Speedy,Yoda,Ninja,Shere Khan,Tigra,Tiger,Snowball,Whiskers,Rusty,Simba,Patches".equals(megaNom),
-                "".equals(megaNom)) ;
+                "".equals(megaNom));
 
         fullMessage += "- " + generateMessage("totalSalairesApresTaxes",
                 totalSalairesApresTaxes,
                 totalSalairesApresTaxes == 684500.0,
-                totalSalairesApresTaxes == 0) ;
+                totalSalairesApresTaxes == 0);
 
         fullMessage += "- " + generateMessage("totalSalairesApresTaxes",
                 totalSalairesApresTaxesPropre,
                 totalSalairesApresTaxesPropre == 777500.0,
-                totalSalairesApresTaxesPropre == 0) ;
+                totalSalairesApresTaxesPropre == 0);
 
         JOptionPane.showMessageDialog(null, fullMessage);
     }
 
     // Method to generate messages
     private static String generateMessage(String variableName, Object variableValue, boolean isCorrect, boolean isNotTried) {
-        if(isNotTried) {
-            return String.format("ℹ Vous n'avez pas encore essayé **%s**.\n", variableName) ;
+        if (isNotTried) {
+            return String.format("ℹ Vous n'avez pas encore essayé **%s**.\n", variableName);
         } else if (isCorrect) {
-            return String.format("✔ Vous avez raison ! La réponse pour **%s** est correcte.\n", variableName) ;
+            return String.format("✔ Vous avez raison ! La réponse pour **%s** est correcte.\n", variableName);
         } else {
             return String.format("❌ Il semble que la réponse pour **%s** soit incorrecte, essayez encore.\n", variableName);
         }
@@ -188,7 +189,7 @@ public class AMain {
 
     public static void main(String[] args) {
         try {
-            codePourPuzzle() ;
+            codePourPuzzle();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Vous sembler avoir brisé quelque chose... allez voir la console !", "Erreur", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
